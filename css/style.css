@@ -176,13 +176,14 @@ h1 {
 .main-display {
   min-height: 72px;
   padding: 2px 14px 12px;
-  color: #111827;
+  color: #d97706;
   font-size: clamp(2.25rem, 11vw, 3.4rem);
   font-variant-numeric: tabular-nums;
   font-weight: 750;
   letter-spacing: -.045em;
 }
 
+.main-display.is-result { color: #dc2626; }
 .main-display.is-error { color: var(--danger); font-size: clamp(1.7rem, 8vw, 2.3rem); }
 
 .keypad {
