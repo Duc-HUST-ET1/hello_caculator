@@ -17,6 +17,9 @@
 | T13 | Bàn phím `Escape` | reset về `0` |
 | T14 | Viewport 320 px | không có horizontal page scroll |
 | T15 | Tab qua keypad | focus-visible rõ ràng |
+| T16 | `2 ^ 3 =` | `8` |
+| T17 | `√` với `9` | `3` |
+| T18 | `√` với số âm | `Error` |
 
 ## Acceptance checklist
 

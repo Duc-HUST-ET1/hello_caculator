@@ -9,12 +9,13 @@ Một Web App calculator nhỏ phục vụ giảng dạy các khái niệm nền
 - Số `0–9`
 - Dấu thập phân `.`
 - `+`, `−`, `×`, `÷`
+- Luỹ thừa `^` và căn bậc hai `√`
 - `=`
 - `C` để reset
 - `⌫` để xóa ký tự cuối
 - Xử lý chia cho 0 → `Error`
 - Responsive từ viewport khoảng 320 px
-- Keyboard: `0–9`, `+`, `-`, `*`, `/`, `Enter`, `Backspace`, `Escape`
+- Keyboard: `0–9`, `+`, `-`, `*`, `/`, `^`, `R`, `Enter`, `Backspace`, `Escape`
 - Developer / Learning Panel hiển thị Event và State
 
 ## Cấu trúc source

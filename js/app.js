@@ -52,8 +52,10 @@ window.addEventListener('keydown', (event) => {
     handleAction('number', event.key, 'keydown');
   } else if (event.key === '.') {
     handleAction('decimal', '.', 'keydown');
-  } else if (['+', '-', '*', '/'].includes(event.key)) {
+  } else if (['+', '-', '*', '/', '^'].includes(event.key)) {
     handleAction('operator', event.key, 'keydown');
+  } else if (event.key.toLowerCase() === 'r') {
+    handleAction('squareRoot', '√', 'keydown');
   } else if (event.key === 'Enter' || event.key === '=') {
     event.preventDefault();
     handleAction('equals', '=', 'keydown');

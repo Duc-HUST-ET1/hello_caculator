@@ -41,9 +41,22 @@ assert.equal(m.currentInput, '2');
 m = run([['number','8'],['operator','*'],['number','9'],['equals','=']]);
 assert.equal(m.currentInput, '72');
 
+m = run([['number','2'],['operator','^'],['number','3'],['equals','=']]);
+assert.equal(m.currentInput, '8');
+
+m = run([['number','8'],['squareRoot','√']]);
+assert.equal(m.currentInput, '2.8284271247');
+
+m = run([['number','9'],['squareRoot','√']]);
+assert.equal(m.currentInput, '3');
+
+m = run([['number','0'],['operator','-'],['number','9'],['equals','='],['squareRoot','√']]);
+assert.equal(m.currentInput, 'Error');
+assert.equal(m.error, true);
+
 m.handleAction('clear', 'C', 'test');
 assert.equal(m.currentInput, '0');
 assert.equal(m.firstOperand, null);
 assert.equal(m.operator, null);
 
-console.log('PASS: 12 calculator model tests');
+console.log('PASS: 16 calculator model tests');

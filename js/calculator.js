@@ -4,7 +4,8 @@ export const OPERATOR_LABELS = Object.freeze({
   '+': '+',
   '-': '−',
   '*': '×',
-  '/': '÷'
+  '/': '÷',
+  '^': '^'
 });
 
 export class CalculatorModel {
@@ -90,8 +91,27 @@ export class CalculatorModel {
       case '-': return a - b;
       case '*': return a * b;
       case '/': return b === 0 ? null : a / b;
+      case '^': return Math.pow(a, b);
       default: return b;
     }
+  }
+
+  performSquareRoot() {
+    if (this.error) return;
+
+    const operand = Number(this.currentInput);
+    const completed = `√${this.formatDisplayNumber(operand)} =`;
+    if (operand < 0) {
+      this.setError(completed);
+      return;
+    }
+
+    this.currentInput = this.formatResult(Math.sqrt(operand));
+    this.firstOperand = null;
+    this.operator = null;
+    this.waitingForOperand = false;
+    this.justCalculated = true;
+    this.completedExpression = completed;
   }
 
   performEquals() {
@@ -167,6 +187,7 @@ export class CalculatorModel {
       case 'decimal': this.inputDecimal(); break;
       case 'operator': this.chooseOperator(value); break;
       case 'equals': this.performEquals(); break;
+      case 'squareRoot': this.performSquareRoot(); break;
       case 'clear': this.reset(); break;
       case 'backspace': this.backspace(); break;
     }
